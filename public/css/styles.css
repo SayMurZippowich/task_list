@@ -1,0 +1,62 @@
+.btn-h1-spacing {
+    margin-top: 18px;
+}
+
+.h1-spacing {
+    margin-top: 9px;
+}
+
+.ml-075 {
+  margin-left: 0.75rem !important;
+}
+.mr-150 {
+  margin-right: 1.0rem !important;
+}
+.form-spacing-top {
+    margin-top: 15px;
+}
+
+.bg-nav {
+  background-color: #ffe60b !important;
+}
+
+.btn-brown-tank {
+  color: #fff;
+  background-color: #bf9b36;
+  border-color: #bf9b36;
+}
+
+.btn-brown-tank:hover {
+  color: #fff;
+  background-color: #a57b03;
+  border-color: #a57b03;
+}
+
+.btn-brown-tank:focus, .btn-brown-tank.focus {
+  color: #fff;
+  background-color: #a57b03;
+  border-color: #a57b03;
+  box-shadow: 0 0 0 0.2rem rgba(165,123,3, 0.5);
+}
+.btn-earls-green {
+  color: #fff;
+  background-color: #bfb136;
+  border-color: #bfb136;
+}
+
+.btn-earls-green:hover {
+  color: #fff;
+  background-color: #a69605;
+  border-color: #a69605;
+}
+
+.btn-earls-green:focus, .btn-earls-green.focus {
+  color: #fff;
+  background-color: #a69605;
+  border-color: #a69605;
+  box-shadow: 0 0 0 0.2rem rgba(166,150,5, 0.5);
+}
+
+.form-border-radius {
+    border-radius: 6px;
+}

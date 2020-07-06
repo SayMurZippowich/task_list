@@ -1,0 +1,9 @@
+<IfModule rewrite_module>
+
+RewriteEngine on
+RewriteCond %{REQUETS_FILENAME} !-f
+RewriteCond %{REQUETS_FILENAME} !-d
+#RewriteRule ^(.*\.css)$ $1
+RewriteRule ^(.*)$ $1
+
+</IfModule>
