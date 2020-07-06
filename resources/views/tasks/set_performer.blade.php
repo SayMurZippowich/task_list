@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title','|Create new post')
+@section('title','Set Performer')
 @section('content')
 
     <div class="row justify-content-center">

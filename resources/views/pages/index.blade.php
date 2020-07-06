@@ -1,5 +1,5 @@
 @extends('main')
-@section('title','|Contact')
+@section('title','Task_List')
 @section('content')
   <div class="row btn-h1-spacing">
     <div class="col-md-12">
