@@ -21,7 +21,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         @can('tasks-admin')
-          <a class="dropdown-item" href="{{ route('tasks.create') }}">CreateTasks</a>
+          <a class="dropdown-item" href="{{ route('tasks.create') }}">Create Tasks</a>
+          <a class="dropdown-item" href="{{ route('tasks.gen') }}">Gen Tasks</a>
         @endcan
           <a class="dropdown-item" href="{{ route('pages.index') }}">MyTasks</a>
           <div class="dropdown-divider"></div>

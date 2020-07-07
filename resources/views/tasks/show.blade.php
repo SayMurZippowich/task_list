@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title','|Show Task')
+@section('title','Show Task')
 @section('content')
 
     <div class="row justify-content-center">
@@ -44,9 +44,11 @@
                                         href="{{ route('tasks.set_performer', ['task' => $task->id]) }}"
                                         role="button">Set performer</a>
                             @endcan
+                            @if ($task->task_statuses->status != 'blue')
                                     <a class="btn btn-brown-tank mr-5" 
                                         href="{{ route('tasks.complete', ['task' => $task->id]) }}" 
                                         role="button">Complete</a>
+                            @endif
                             @can('tasks-admin')
                                 {!! Form::open(['route' => ['tasks.destroy', $task->id], 'method' => 'DELETE']) !!}
                                 {!! Form::submit('Del', ['class' => 'btn btn-brown-tank mr-3']) !!}

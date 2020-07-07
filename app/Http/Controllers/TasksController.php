@@ -80,6 +80,16 @@ class TasksController extends Controller
         return redirect()->route('tasks.show', $task->id);
     }
 
+    public function task_generate(Request $request)
+    {
+        return view('tasks.tasks_gen');
+    }
+
+    public function tasks_gen_store()
+    {
+        dd($request);
+        return redirect()->route('tasks.index');
+    }
     /**
      * Display the specified resource.
      *
