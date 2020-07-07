@@ -63,7 +63,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2020_07_02_082511_create_roles_table',1),(5,'2020_07_02_083319_create_role_user_table',1),(6,'2020_07_03_141229_create_task_statuses_table',2),(9,'2020_07_03_141432_create_tasks_table',3);
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2020_07_02_082511_create_roles_table',1),(5,'2020_07_02_083319_create_role_user_table',1),(6,'2020_07_03_141229_create_task_statuses_table',2),(9,'2020_07_03_141432_create_tasks_table',3);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,7 +118,7 @@ CREATE TABLE `role_user` (
 
 LOCK TABLES `role_user` WRITE;
 /*!40000 ALTER TABLE `role_user` DISABLE KEYS */;
-INSERT INTO `role_user` VALUES (1,1,1,NULL,NULL),(2,2,2,NULL,NULL),(3,2,3,NULL,NULL);
+INSERT INTO `role_user` (`id`, `role_id`, `user_id`, `created_at`, `updated_at`) VALUES (1,1,1,NULL,NULL),(2,2,2,NULL,NULL),(3,2,3,NULL,NULL);
 /*!40000 ALTER TABLE `role_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +144,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'admin','2020-07-02 18:17:52','2020-07-02 18:17:52'),(2,'user','2020-07-02 18:17:52','2020-07-02 18:17:52');
+INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES (1,'admin','2020-07-02 18:17:52','2020-07-02 18:17:52'),(2,'user','2020-07-02 18:17:52','2020-07-02 18:17:52');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,7 +170,7 @@ CREATE TABLE `task_statuses` (
 
 LOCK TABLES `task_statuses` WRITE;
 /*!40000 ALTER TABLE `task_statuses` DISABLE KEYS */;
-INSERT INTO `task_statuses` VALUES (1,'green','2020-07-03 14:17:09','2020-07-03 14:17:09'),(2,'yellow','2020-07-03 14:19:39','2020-07-03 14:19:39'),(3,'blue','2020-07-03 14:20:21','2020-07-03 14:20:21');
+INSERT INTO `task_statuses` (`id`, `status`, `created_at`, `updated_at`) VALUES (1,'green','2020-07-03 14:17:09','2020-07-03 14:17:09'),(2,'yellow','2020-07-03 14:19:39','2020-07-03 14:19:39'),(3,'blue','2020-07-03 14:20:21','2020-07-03 14:20:21');
 /*!40000 ALTER TABLE `task_statuses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,7 +205,7 @@ CREATE TABLE `tasks` (
 
 LOCK TABLES `tasks` WRITE;
 /*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-INSERT INTO `tasks` VALUES (1,1,1,'Admin\'s task',2,'2020-07-04 17:06:23','2020-07-07 01:24:25'),(2,1,2,'Task for user 1 and only he should see it \r\n(Admin sees all tasks)',2,'2020-07-05 22:17:50','2020-07-07 01:27:04'),(3,1,3,'Hello User 2!',2,'2020-07-05 22:18:47','2020-07-07 01:30:52');
+INSERT INTO `tasks` (`id`, `creator_id`, `performer_id`, `description`, `task_status_id`, `created_at`, `updated_at`) VALUES (1,1,1,'Admin\'s task',2,'2020-07-04 17:06:23','2020-07-07 01:24:25'),(2,1,2,'Task for user 1 and only he should see it \r\n(Admin sees all tasks)',2,'2020-07-05 22:17:50','2020-07-07 01:27:04'),(3,1,3,'Hello User 2!',2,'2020-07-05 22:18:47','2020-07-07 01:30:52');
 /*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -236,7 +236,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Admin','admin@a.ru',NULL,'$2y$10$eE2c7sLvKW8sOlrg600Ls.8svxBeuZ5.jzSkXzePim/S5TNgBsELO',NULL,'2020-07-02 15:51:50','2020-07-02 15:51:50'),(2,'User1','user1@a.ru',NULL,'$2y$10$Z6C32lusvE57BAzJUPJpPu0MaQ4naekK2NEOudkOn1zYid63tEuNC',NULL,'2020-07-03 14:25:20','2020-07-03 14:25:20'),(3,'User2','user2@a.ru',NULL,'$2y$10$P6GxQbYToJk94nWNSc/GnePjsPCgAY02VE9Y/4glbTFuH7ExshcEu',NULL,'2020-07-03 14:26:20','2020-07-03 14:26:20');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES (1,'Admin','admin@a.ru',NULL,'$2y$10$eE2c7sLvKW8sOlrg600Ls.8svxBeuZ5.jzSkXzePim/S5TNgBsELO',NULL,'2020-07-02 15:51:50','2020-07-02 15:51:50'),(2,'User1','user1@a.ru',NULL,'$2y$10$Z6C32lusvE57BAzJUPJpPu0MaQ4naekK2NEOudkOn1zYid63tEuNC',NULL,'2020-07-03 14:25:20','2020-07-03 14:25:20'),(3,'User2','user2@a.ru',NULL,'$2y$10$P6GxQbYToJk94nWNSc/GnePjsPCgAY02VE9Y/4glbTFuH7ExshcEu',NULL,'2020-07-03 14:26:20','2020-07-03 14:26:20');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -249,4 +249,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-07  9:53:48
+-- Dump completed on 2020-07-07  9:54:00
